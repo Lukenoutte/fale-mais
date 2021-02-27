@@ -1,0 +1,10 @@
+.plan-block{
+    height: 100px;
+    width: 100px;
+    background: transparent;
+    outline: none;
+    border: 2px solid var(--main-font-color);
+    border-radius: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}

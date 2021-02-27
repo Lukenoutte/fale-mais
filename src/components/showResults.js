@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { SimulatorContext } from "../context/SimulatiorContext";
+import { SimulationContext } from "../context/SimulationContext";
 
 function ShowResults() {
-  const { withPlan, withoutPlan } = useContext(SimulatorContext);
+  const { withPlan, withoutPlan } = useContext(SimulationContext);
 
   return (
     <div>

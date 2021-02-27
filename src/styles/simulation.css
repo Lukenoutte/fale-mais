@@ -1,0 +1,72 @@
+.simulator {
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+}
+
+.left-container {
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.right-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.simulator .g-centrilize {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-container .wrapper-simulator {
+  height: 130px;
+  margin-bottom: 20px;
+}
+
+.left-container .labels {
+  margin-bottom: 20px;
+}
+
+.left-container .labels h1 {
+  font-size: 70px;
+  font-family: 'Pacifico', cursive;
+}
+
+.left-container .labels p {
+  font-size: 20px;
+  max-width: 500px;
+  font-weight: bold;
+}
+
+.left-container .next-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: bolder;
+  border: 1px solid var(--primary-color);
+  margin-left: 20px;
+}
+
+.left-container .next-button:hover {
+    background-color: var(--button-especial-hover);
+}
+
+.left-container .previous-button{
+    padding: 10px 15px ;
+}
+
+.page-control-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.previous-icon {
+  height: 15px;
+  width: 15px;
+  fill: var(--main-font-color);
+}

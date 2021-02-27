@@ -4,10 +4,12 @@ import ChooseCities from "../components/chooseCities";
 import ChoosePlan from "../components/choosePlan";
 import ShowResults from "../components/showResults.js";
 import tariff from "../components/tariff";
-import { SimulatorContext } from "../context/SimulatiorContext";
-import "../styles/simulator.css";
+import { SimulationContext } from "../context/SimulationContext";
+import "../styles/simulation.css";
 import Lottie from "react-lottie";
 import animationData from "../assets/drawkit-LOOP.json";
+import { ReactComponent as PreviousIcon } from "../assets/previousIcon.svg";
+
 function Simulator() {
   const [pageControl, setPageControl] = useState(0);
 
@@ -27,7 +29,7 @@ function Simulator() {
     minutes,
     withPlan,
     withoutPlan,
-  } = useContext(SimulatorContext);
+  } = useContext(SimulationContext);
 
   const pages = {
     0: <ChooseMinutes />,
@@ -91,13 +93,20 @@ function Simulator() {
       <div className="g-centrilize">
         <div className="left-container">
           <div className="labels">
-            <h1>Fale Mais</h1>
-            <p>Escolha seu plano e fale de graça por quantos minutoss quiser!</p>
+            <h1>FaleMais</h1>
+            <p>
+              Escolha o plano que mais se parece com você. Faça a simulação
+              agora!
+            </p>
           </div>
           <div className="wrapper-simulator">{pages[pageControl]}</div>
-          <div>
-            <button className="button-style" onClick={backPage}>Voltar</button>
-            <button className="button-style next-button"  onClick={nextPage}>Avançar</button>
+          <div className="page-control-buttons">
+            <button className="g-button-style previous-button" onClick={backPage}>
+              <PreviousIcon className="previous-icon" />
+            </button>
+            <button className="g-button-style next-button" onClick={nextPage}>
+              Avançar
+            </button>
           </div>
         </div>
         <div className="right-container">

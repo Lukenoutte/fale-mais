@@ -1,7 +1,7 @@
 import React, { createContext, useRef, useState } from "react";
-const SimulatorContext = createContext();
+const SimulationContext = createContext();
 
-function SimulatorProvider({ children }) {
+function SimulationProvider({ children }) {
   const allCities = useRef(["011", "016", "017", "018"]);
   const [origin, setOrigin] = useState("011");
   const [destination, setDestination] = useState("011");
@@ -20,7 +20,7 @@ function SimulatorProvider({ children }) {
 
 
   return (
-    <SimulatorContext.Provider
+    <SimulationContext.Provider
       value={{
         allCities,
         origin: { value: origin, set: handleSelectOrigin },
@@ -32,8 +32,8 @@ function SimulatorProvider({ children }) {
       }}
     >
       {children}
-    </SimulatorContext.Provider>
+    </SimulationContext.Provider>
   );
 }
 
-export { SimulatorContext, SimulatorProvider };
+export { SimulationContext, SimulationProvider };

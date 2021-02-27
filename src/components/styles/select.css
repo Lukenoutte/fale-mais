@@ -1,0 +1,20 @@
+.select-component select {
+  outline: none;
+  height: 60px;
+  width: 120px;
+  font-size: 30px;
+  border-radius: 15px;
+  font-weight: bolder;
+  background: transparent;
+  border: 1px solid var(--main-font-color);
+  padding-left: 10px;
+}
+
+.select-component p{
+    position: absolute;
+    background: var(--background);
+    padding: 0 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: -10px;
+}

@@ -1,16 +1,17 @@
 import React from 'react';
 import "./styles/global.css";
-import Simulator from "./container/simulator";
+import Simulation from "./container/simulation";
 import Header from "./components/header";
-import { SimulatorProvider } from "./context/SimulatiorContext";
+import { SimulationProvider } from "./context/SimulationContext";
 
 function App() {
 
   return (
-    <SimulatorProvider>
+    <SimulationProvider>
     <Header/>
-    <Simulator/>
-    </SimulatorProvider>
+    <Simulation/>
+    <footer/>
+    </SimulationProvider>
   );
 }
 

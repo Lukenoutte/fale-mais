@@ -1,0 +1,14 @@
+.destination-select{
+    margin-left: 20px;
+}
+
+.choose-cities{
+    display: flex;
+    flex-direction: column;
+}
+
+.selects-choose-cities{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}

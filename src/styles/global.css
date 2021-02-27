@@ -5,6 +5,9 @@
   --secundary-color: #46dbc8;
   --background: #f5f5f5;
   --white: #FFF;
+  --placeholder: #c4c4c4;
+  --button-normal-hover: #f0f0f0;
+  --button-especial-hover: #f7575c;
 }
 
 * {
@@ -33,10 +36,23 @@ select {
   width: 90%;
 }
 
-.button-style{
+.g-button-style{
   padding: 10px 40px;
   border-radius: 20px;
   border: 1px solid var(--main-font-color);
   outline: none;
   cursor: pointer;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.g-button-style:hover{
+  background: var(--button-normal-hover) ;
+}
+
+
+footer{
+  height: 10vh;
 }

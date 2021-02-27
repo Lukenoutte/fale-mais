@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { SimulatorContext } from "../context/SimulatiorContext";
+import { SimulationContext } from "../context/SimulationContext";
+import "./styles/plan_block.css";
 
 function PlanBlock(props) {
-  const { plan } = useContext(SimulatorContext);
+  const { plan } = useContext(SimulationContext);
   const { planMinutes } = props;
 
   function changePlan(planCliked) {
@@ -10,7 +11,8 @@ function PlanBlock(props) {
   }
 
   return (
-    <button onClick={() => changePlan(planMinutes)}>
+    <button className="plan-block" onClick={() => changePlan(planMinutes)}>
+      <p>FaleMais</p>
       <h1> {planMinutes} </h1>
     </button>
   );
