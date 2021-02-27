@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import { SimulatorContext } from "../context/SimulatiorContext";
 
 function PlanBlock(props) {
@@ -6,7 +6,6 @@ function PlanBlock(props) {
   const { planMinutes } = props;
 
   function changePlan(planCliked) {
-    console.log(planCliked);
     plan.set(planCliked);
   }
 

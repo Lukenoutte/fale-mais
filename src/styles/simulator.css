@@ -1,0 +1,51 @@
+.simulator{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+.left-container{
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.right-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.simulator .g-centrilize{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container .wrapper-simulator{
+   height: 20%;
+ 
+}
+
+.left-container .labels{
+margin-bottom: 20px;
+}
+
+.left-container .labels h1{
+    font-size: 70px;
+}
+
+.left-container .labels p{
+    font-size: 18px;
+    max-width: 500px;
+}
+
+.left-container .next-button{
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bolder;
+    border: 1px solid var(--primary-color);
+    margin-left: 30px;
+}

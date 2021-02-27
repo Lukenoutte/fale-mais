@@ -5,9 +5,9 @@ function Header() {
   return (
     <header>
       <div className="g-centrilize"> 
-        <div className="logo">wow</div>
-        <div className="middle-menu">a</div>
-        <button>Click</button>
+        <div className="logo"><h1>Telzir.</h1></div>
+       
+        <button className="button-style" >Planos</button>
       </div>
     </header>
   );

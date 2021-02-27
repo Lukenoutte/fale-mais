@@ -1,0 +1,17 @@
+.choose-minutes input{
+    height: 60px;
+    width: 90px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--main-font-color);
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
+
+.choose-minutes input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
