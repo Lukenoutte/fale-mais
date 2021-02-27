@@ -1,6 +1,6 @@
 header{
-    height: 100px;
-    background-color: red;
+    height: 20vh;
+
     display: flex;
     justify-content: center;
 }
@@ -8,7 +8,7 @@ header{
 .logo{
     height: 50px;
     width: 100px;
-    background-color: aliceblue;
+  
 }
 
 header .g-centrilize{
@@ -16,4 +16,5 @@ header .g-centrilize{
     align-items: center;
     justify-content: space-between;
 }
+
 
