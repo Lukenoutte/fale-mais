@@ -35,7 +35,6 @@
 
 .left-container .labels h1 {
   font-size: 70px;
-
 }
 
 .left-container .labels p {
@@ -53,11 +52,11 @@
 }
 
 .left-container .next-button:hover {
-    background-color: var(--button-especial-hover);
+  background-color: var(--button-especial-hover);
 }
 
-.left-container .previous-button{
-    padding: 10px 15px ;
+.left-container .previous-button {
+  padding: 10px 15px;
 }
 
 .page-control-buttons {
@@ -69,4 +68,50 @@
   height: 15px;
   width: 15px;
   fill: var(--main-font-color);
+}
+
+.disable-button-preview {
+  border: 1px solid var(--light-blue);
+  cursor: auto;
+}
+
+.disable-button-preview .previous-icon {
+  fill: var(--light-blue);
+}
+
+.disable-button-next {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 750px) {
+  .left-container .labels h1 {
+    font-size: 50px;
+  }
+
+  .left-container .next-button {
+    width: 80%;
+    font-size: 12px;
+  }
+
+  .left-container .previous-button {
+    width: 20%;
+  }
+
+  .left-container .labels p {
+    font-size: 15px;
+  }
+  .right-container {
+    display: none;
+  }
+  .left-container {
+    width: 100%;
+  }
+
+  .left-container .labels p {
+    max-width: 300px;
+  }
+
+  .simulator {
+    height: 80vh;
+  }
 }

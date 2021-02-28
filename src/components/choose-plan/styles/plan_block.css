@@ -29,3 +29,18 @@
   color: var(--white);
   border: 2pxx solid var(--secundary-color);
 }
+
+@media only screen and (max-width: 750px) {
+  .plan-block {
+    width: 31.3%;
+    margin-right: 2%;
+  }
+
+  .plan-block h1 {
+    height: 25px;
+  }
+  .plan-block p {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}

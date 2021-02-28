@@ -37,3 +37,10 @@
     margin-top: -10px;
     padding: 0 5px;
 }
+
+
+@media only screen and (max-width: 750px) {
+  .choose-minutes input {
+    width: 100%;
+  }
+}

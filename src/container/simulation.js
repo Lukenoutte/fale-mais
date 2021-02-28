@@ -1,27 +1,20 @@
 import React, { useState, useContext } from "react";
-import ChooseMinutes from "../components/chooseMinutes";
-import ChooseCities from "../components/chooseCities";
-import ChoosePlan from "../components/choosePlan";
-import ShowResults from "../components/showResults.js";
-import tariff from "../components/tariff";
+import ChooseMinutes from "../components/choose-minutes/chooseMinutes";
+import ChooseCities from "../components/choose-cities/chooseCities";
+import ChoosePlan from "../components/choose-plan/choosePlan";
+import ShowResults from "../components/show-results/showResults.js";
+import tariff from "./utilits/tariff";
 import { SimulationContext } from "../context/SimulationContext";
 import "../styles/simulation.css";
-import Lottie from "react-lottie";
-import animationData from "../assets/drawkit-LOOP.json";
+import Animation from "../components/animation/animation";
 import { ReactComponent as PreviousIcon } from "../assets/previousIcon.svg";
+import PopUp from "../components/pop-up/popUp";
+
+import { calculateWithoutPlan, calculateWithPlan } from "./utilits/calculate";
 
 function Simulator() {
   const [pageControl, setPageControl] = useState(0);
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
+  const [errorMessage, setErrorMessage] = useState("Preencha o campo.");
   const {
     plan,
     origin,
@@ -29,6 +22,7 @@ function Simulator() {
     minutes,
     withPlan,
     withoutPlan,
+    showPopUp,
   } = useContext(SimulationContext);
 
   const pages = {
@@ -44,6 +38,11 @@ function Simulator() {
   }
 
   function nextPage() {
+    if (handleErrors()) {
+      showPopUp.set(true);
+      return;
+    }
+
     if (pageControl < 3)
       setPageControl((prevPageControl) => prevPageControl + 1);
 
@@ -52,40 +51,51 @@ function Simulator() {
     }
   }
 
+  function handleErrors() {
+    let emptyMinutes = minutes.value === "0" || minutes.value === "";
+    let emptyPlan = plan.value === "";
+
+    if (pageControl === 0 && emptyMinutes) {
+      setErrorMessage("Preencha o campo de minutos.");
+      return true;
+    }
+    if (pageControl === 2 && emptyPlan) {
+      setErrorMessage("Selecione um plano.");
+      return true;
+    }
+
+    return false;
+  }
+
+  function disableButtonPreview() {
+    if (pageControl === 0) return "disable-button-preview";
+    return "";
+  }
+
+  function disableButtonNext() {
+    if (pageControl === 3) return "disable-button-next";
+    return "";
+  }
+
   function calculateValues() {
     let moneyPerMinute = tariff(origin.value, destination.value);
+    let typedMinutes = minutes.value;
+    let planValue = parseInt(plan.value);
 
     if (moneyPerMinute !== 0) {
-      calculateValueWithoutPlan(moneyPerMinute);
+      let resultWithplan = calculateWithPlan(
+        moneyPerMinute,
+        typedMinutes,
+        planValue
+      );
+      withPlan.set(resultWithplan);
 
-      calculateValueWithPlan(moneyPerMinute);
-    } else {
-      console.log("Something wrong! :(");
-    }
-  }
-
-  function calculateValueWithoutPlan(moneyPerMinute) {
-    let typedMinutes = minutes.value;
-    let normalValue = typedMinutes * moneyPerMinute;
-    withoutPlan.set(normalValue);
-    console.log(normalValue);
-  }
-
-  function calculateValueWithPlan(moneyPerMinute) {
-    let typedMinutes = minutes.value;
-    let minutesLeftUsingPlan = typedMinutes - parseInt(plan.value);
-    const percentTariff = 10;
-
-    if (minutesLeftUsingPlan > 0) {
-      let tariffValue = (percentTariff / 100) * minutesLeftUsingPlan;
-
-      let valueUsingPlan =
-        (minutesLeftUsingPlan + tariffValue) * moneyPerMinute;
-      withPlan.set(valueUsingPlan);
-      console.log(valueUsingPlan);
-    } else {
-      withPlan.set(0);
-    }
+      let resultWithoutplan = calculateWithoutPlan(
+        moneyPerMinute,
+        typedMinutes
+      );
+      withoutPlan.set(resultWithoutplan);
+    } 
   }
 
   return (
@@ -100,18 +110,28 @@ function Simulator() {
           </div>
           <div className="wrapper-simulator">{pages[pageControl]}</div>
           <div className="page-control-buttons">
-            <button className="g-button-style previous-button" onClick={backPage}>
+            <button
+              className={
+                disableButtonPreview() + " g-button-style previous-button"
+              }
+              onClick={backPage}
+            >
               <PreviousIcon className="previous-icon" />
             </button>
-            <button className="g-button-style next-button" onClick={nextPage}>
-              Avançar
+
+            <button
+              className={disableButtonNext() + " g-button-style next-button"}
+              onClick={nextPage}
+            >
+              {pageControl === 2 ? "Ver Resultados" : "Avançar"}
             </button>
           </div>
         </div>
         <div className="right-container">
-          <Lottie options={defaultOptions} height={450} width={500} />
+          <Animation />
         </div>
       </div>
+      {showPopUp.value && <PopUp message={errorMessage} />}
     </div>
   );
 }

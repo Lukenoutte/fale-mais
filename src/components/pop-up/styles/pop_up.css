@@ -1,0 +1,17 @@
+.pop-up{
+    background-color: var(--primary-color);
+    color: var(--white);
+    position: fixed;
+    bottom: 15px;
+    max-width: 90%;
+    padding: 10px 50px;
+    font-size: 14px;
+    border-radius: 15px;
+}
+
+.pop-up-wrapper{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { SimulationContext } from "../context/SimulationContext";
+import { SimulationContext } from "../../context/SimulationContext";
 import "./styles/plan_block.css";
 
 function PlanBlock(props) {

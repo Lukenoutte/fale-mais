@@ -1,6 +1,4 @@
-.destination-select{
-    margin-left: 20px;
-}
+
 
 .choose-cities{
     display: flex;
@@ -11,4 +9,10 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+ .destination-select{
+     margin-left: 5%;
+ }
 }

@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <div className="g-centrilize"> 
-        <div className="logo"><h1>Telzir.</h1></div>
+        <div className="logo"><a href="/">Telzir.</a></div>
        
         <button className="g-button-style" >Planos</button>
       </div>

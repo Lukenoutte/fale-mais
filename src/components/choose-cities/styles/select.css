@@ -1,0 +1,42 @@
+.select-component select {
+  outline: none;
+  height: 60px;
+  width: 120px;
+  font-size: 30px;
+  border-radius: 15px;
+  font-weight: bolder;
+  background: transparent;
+  border: 1px solid var(--main-font-color);
+  padding-left: 10px;
+}
+.select-component select option {
+  font-weight: 600;
+}
+
+.select-component p {
+  position: absolute;
+  background: var(--background);
+  padding: 0 10px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: -10px;
+}
+
+.destination-select {
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .select-component,
+  .destination-select {
+    width: 50%;
+  }
+  .select-component select,
+  .destination-select .select-component {
+    width: 100%;
+  }
+
+  .destination-select {
+    margin-left: 0px;
+  }
+}

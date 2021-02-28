@@ -8,6 +8,8 @@
   --placeholder: #c4c4c4;
   --button-normal-hover: #f0f0f0;
   --button-especial-hover: #f7575c;
+  --light-blue: #b6c5fb;
+  --light-red: #faaaad;
 }
 
 * {
@@ -54,5 +56,20 @@ select {
 
 
 footer{
-  height: 10vh;
+  height: 20vh;
+}
+
+
+@media only screen and (max-width: 750px) {
+  footer{
+    height: 5vh;
+  }
+
+  .g-centrilize {
+    width: 80%;
+  }
+
+  .g-button-style{
+    padding: 10px 20px;
+  }
 }
