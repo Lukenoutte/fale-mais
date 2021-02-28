@@ -25,7 +25,7 @@
 }
 
 .left-container .wrapper-simulator {
-  height: 130px;
+  height: 160px;
   margin-bottom: 20px;
 }
 
@@ -35,7 +35,7 @@
 
 .left-container .labels h1 {
   font-size: 70px;
-  font-family: 'Pacifico', cursive;
+
 }
 
 .left-container .labels p {

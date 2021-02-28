@@ -95,8 +95,7 @@ function Simulator() {
           <div className="labels">
             <h1>FaleMais</h1>
             <p>
-              Escolha o plano que mais se parece com você. Faça a simulação
-              agora!
+              Escolha o plano que mais se parece com você. Faça a simulação.
             </p>
           </div>
           <div className="wrapper-simulator">{pages[pageControl]}</div>

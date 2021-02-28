@@ -1,10 +1,31 @@
-.plan-block{
-    height: 100px;
-    width: 100px;
-    background: transparent;
-    outline: none;
-    border: 2px solid var(--main-font-color);
-    border-radius: 15px;
-    margin-right: 10px;
-    cursor: pointer;
+.plan-block {
+  height: 110px;
+  width: 100px;
+  background: transparent;
+  outline: none;
+  border: 2px solid var(--main-font-color);
+  border-radius: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+
+}
+.plan-block:hover {
+    background: var(--button-normal-hover);
+}
+
+.plan-block h1 {
+    height: 35px;
+    font-weight: bolder;
+}
+
+.plan-block p {
+  margin-bottom: 0px !important;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.selected-plan{
+  background: var(--main-font-color)!important;
+  color: var(--white);
+  border: 2pxx solid var(--secundary-color);
 }

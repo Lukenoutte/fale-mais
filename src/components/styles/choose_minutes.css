@@ -16,6 +16,7 @@
 .choose-minutes input::placeholder {
   font-size: 20px;
   color: var(--placeholder);
+  font-weight: bold;
 }
 
 .choose-minutes input[type="number"]::-webkit-inner-spin-button {

@@ -4,16 +4,27 @@ import "./styles/plan_block.css";
 
 function PlanBlock(props) {
   const { plan } = useContext(SimulationContext);
-  const { planMinutes } = props;
+  const { planProp } = props;
 
   function changePlan(planCliked) {
     plan.set(planCliked);
   }
 
+  function classPlanBlock() {
+
+    if (planProp === plan.value) return "selected-plan";
+
+    return "";
+  }
+
   return (
-    <button className="plan-block" onClick={() => changePlan(planMinutes)}>
+    <button
+      className={classPlanBlock() + " plan-block "}
+      onClick={() => changePlan(planProp)}
+    >
       <p>FaleMais</p>
-      <h1> {planMinutes} </h1>
+      <h1> {planProp} </h1>
+      <p>minutos</p>
     </button>
   );
 }

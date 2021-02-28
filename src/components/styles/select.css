@@ -9,6 +9,9 @@
   border: 1px solid var(--main-font-color);
   padding-left: 10px;
 }
+.select-component select option{
+  font-weight: 600;
+}
 
 .select-component p{
     position: absolute;

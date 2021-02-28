@@ -1,0 +1,15 @@
+.show-result .with-plan, .show-result .without-plan{
+    background: var();
+    margin-top: 15px;
+    min-width: 220px;
+    max-width: 320px;
+    height: 55px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secundary-color);
+    border: 2px solid var(--secundary-color);
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
 import { SimulationContext } from "../context/SimulationContext";
+import "./styles/show_results.css";
 
 function ShowResults() {
   const { withPlan, withoutPlan } = useContext(SimulationContext);
 
   return (
-    <div>
-      <h1> {withPlan.value} </h1>
-      <h1> {withoutPlan.value} </h1>
+    <div className="show-result">
+      <p>Resultado:</p>
+      <div>
+      <div className="with-plan"> {"R$ " + withPlan.value.toFixed(2)} </div>
+      <div className="without-plan"> {"R$ " + withoutPlan.value.toFixed(2)} </div>
+      </div>
     </div>
   );
 }
