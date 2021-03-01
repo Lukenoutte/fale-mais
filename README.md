@@ -1,6 +1,8 @@
 ## 🎯 Sobre
 
-Pagina web para o cliente calcular o valor da ligação entre diferentes cidade usando o plano FaleMais.
+Pagina web para calcular o valor da ligação entre diferentes cidade usando o plano FaleMais.
+
+✏️ Ilustração: https://www.drawkit.io/product/grape-illustration-pack
 
 ## 🚀 Tecnologias
 
