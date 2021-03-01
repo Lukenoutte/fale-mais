@@ -30,7 +30,7 @@
 }
 
 .left-container .labels {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .left-container .labels h1 {
@@ -49,6 +49,7 @@
   font-weight: bolder;
   border: 1px solid var(--primary-color);
   margin-left: 20px;
+  width: 250px;
 }
 
 .left-container .next-button:hover {
@@ -113,5 +114,9 @@
 
   .simulator {
     height: 80vh;
+  }
+
+  .left-container .wrapper-simulator {
+    height: 170px;
   }
 }

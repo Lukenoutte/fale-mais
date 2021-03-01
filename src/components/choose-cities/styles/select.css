@@ -1,13 +1,14 @@
 .select-component select {
   outline: none;
   height: 60px;
-  width: 120px;
+  width: 155px;
   font-size: 30px;
   border-radius: 15px;
   font-weight: bolder;
   background: transparent;
   border: 1px solid var(--main-font-color);
   padding-left: 10px;
+  cursor: pointer;
 }
 .select-component select option {
   font-weight: 600;

@@ -1,4 +1,4 @@
-export default function tariff(origin, destination){
+function tariff(origin, destination){
     let moneyPerMinute = 0;
     
     const cities = {
@@ -33,3 +33,5 @@ export default function tariff(origin, destination){
 
       return moneyPerMinute;
 }
+
+export default tariff;

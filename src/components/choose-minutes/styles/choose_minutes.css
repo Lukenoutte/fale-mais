@@ -1,13 +1,13 @@
 .choose-minutes input {
   height: 60px;
-  width: 140px;
+  width: 320px;
   font-size: 30px;
   display: flex;
   justify-content: center;
   border: 1px solid var(--main-font-color);
   border-radius: 15px;
   outline: none;
-  padding-left: 10px;
+  padding-left: 11px;
   font-weight: bolder;
   background: transparent;
 
@@ -15,8 +15,9 @@
 
 .choose-minutes input::placeholder {
   font-size: 20px;
-  color: var(--placeholder);
-  font-weight: bold;
+  color: var(--light-blue);
+  font-weight: 600;
+  padding-left: 3px;
 }
 
 .choose-minutes input[type="number"]::-webkit-inner-spin-button {

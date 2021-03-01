@@ -7,7 +7,7 @@ function ChooseMinutes() {
 
   function validateMinutes(e) {
     let inputValue = e.target.value;
-    if (inputValue >= 0 && inputValue <= 999999) {
+    if (inputValue >= 0 && inputValue <= 99999) {
       minutes.set(inputValue);
     }
   }
