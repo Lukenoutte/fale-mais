@@ -14,7 +14,7 @@ Antes de iniciar, você precisa ter [Git](https://git-scm.com) e [Node](https://
 
 ## 🔌 Iniciando o projeto
 ```bash
-$ git clone https://github.com/Lukenoutte/FaleMais.git
+$ git clone https://github.com/Lukenoutte/fale-mais.git
 ```
 
 ### 
