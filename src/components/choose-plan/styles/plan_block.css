@@ -30,6 +30,10 @@
   border: 2pxx solid var(--secundary-color);
 }
 
+.choose-plan p{
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 750px) {
   .plan-block {
     width: 32%;

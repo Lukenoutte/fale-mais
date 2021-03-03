@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { SimulationContext } from "../../context/SimulationContext";
-import "./styles/show_results.css";
 import ResultsBlock from "./resultsBlock";
+
 function ShowResults() {
   const { withPlan, withoutPlan, plan } = useContext(SimulationContext);
 

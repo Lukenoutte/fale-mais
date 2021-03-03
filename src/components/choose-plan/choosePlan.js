@@ -1,6 +1,6 @@
 import React from "react";
 import PlanBlock from "./planBlock";
-import "./styles/choose_plan.css";
+
 
 function ChoosePlan() {
 
