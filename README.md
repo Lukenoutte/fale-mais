@@ -2,6 +2,8 @@
 
 Pagina web para calcular o valor da ligação entre diferentes cidade usando o plano FaleMais.
 
+Demo: https://fale-mais.netlify.app/
+
 ✏️ Ilustração: https://www.drawkit.io/product/grape-illustration-pack
 
 ## 🚀 Tecnologias
