@@ -33,27 +33,19 @@ function Simulator() {
   };
 
   function backPage() {
-    if (pageControl > 0)
-      setPageControl((prevPageControl) => prevPageControl - 1);
+    if (pageControl === 0) return
+    setPageControl((prevPageControl) => prevPageControl - 1);
   }
 
   function nextPage() {
-    if (handleErrors()) {
-      showPopUp.set(true);
-      return;
-    }
-
-    if (pageControl < 3)
-      setPageControl((prevPageControl) => prevPageControl + 1);
-
-    if (pageControl === 2) {
-      calculateValues();
-    }
+    if (handleErrors()) return showPopUp.set(true);
+    if (pageControl < 3) setPageControl((prevPageControl) => prevPageControl + 1);
+    if (pageControl === 2) calculateValues();
   }
 
   function handleErrors() {
-    let emptyMinutes = minutes.value === "0" || minutes.value === "";
-    let emptyPlan = plan.value === "";
+    const emptyMinutes = minutes.value === "0" || minutes.value === "";
+    const emptyPlan = plan.value === "";
 
     if (pageControl === 0 && emptyMinutes) {
       setErrorMessage("Preencha o campo de minutos.");
@@ -68,35 +60,34 @@ function Simulator() {
   }
 
   function disableButtonPreview() {
-    if (pageControl === 0) return "disable-button-preview";
-    return "";
+    if (pageControl !== 0) return "";
+    return "disable-button-preview";
   }
 
   function disableButtonNext() {
-    if (pageControl === 3) return "disable-button-next";
-    return "";
+    if (pageControl !== 3) return "";
+    return "disable-button-next";
   }
 
   function calculateValues() {
-    let moneyPerMinute = tariff(origin.value, destination.value);
-    let typedMinutes = minutes.value;
-    let planValue = parseInt(plan.value);
+    const moneyPerMinute = tariff(origin.value, destination.value);
+    const typedMinutes = minutes.value;
+    const planValue = parseInt(plan.value);
 
-    if (moneyPerMinute !== 0) {
-      let resultWithplan = calculateWithPlan(
-        moneyPerMinute,
-        typedMinutes,
-        planValue
-      );
-      withPlan.set(resultWithplan);
+    if (moneyPerMinute === 0) return
+    const resultWithplan = calculateWithPlan(
+      moneyPerMinute,
+      typedMinutes,
+      planValue
+    );
+    withPlan.set(resultWithplan);
 
-      let resultWithoutplan = calculateWithoutPlan(
-        moneyPerMinute,
-        typedMinutes
-      );
-      withoutPlan.set(resultWithoutplan);
-    } 
-  }
+    const resultWithoutplan = calculateWithoutPlan(
+      moneyPerMinute,
+      typedMinutes
+    );
+    withoutPlan.set(resultWithoutplan);
+}
 
   return (
     <div className="simulator">

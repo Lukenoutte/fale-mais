@@ -7,12 +7,8 @@ function ChooseCities() {
   const { origin, destination } = useContext(SimulationContext);
 
   function rightCitiesOnSelect() {
-    if (origin.value === "011") {
-      return ["016", "017", "018"];
-    } else {
- 
-      return ["011"];
-    }
+    if (origin.value === "011") return ["016", "017", "018"];
+    return ["011"];
   }
 
   return (

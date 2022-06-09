@@ -6,11 +6,10 @@ export default function PopUp(props) {
   const { showPopUp } = useContext(SimulationContext);
   const { message } = props;
   useEffect(() => {
-    if (showPopUp.value) {
-      setTimeout(() => {
-        showPopUp.set(false);
-      }, 2000);
-    }
+    if (!showPopUp.value) return
+    setTimeout(() => {
+      showPopUp.set(false);
+    }, 2000);
   }, [showPopUp]);
 
   return (

@@ -1,21 +1,14 @@
 
 function calculateWithoutPlan(moneyPerMinute, typedMinutes) {
-  let normalValue = typedMinutes * moneyPerMinute;
-  return normalValue;
+  return typedMinutes * moneyPerMinute;
 }
 
 function calculateWithPlan(moneyPerMinute, typedMinutes, planValue) {
-  let minutesLeftUsingPlan = typedMinutes - planValue;
+  const minutesLeftUsingPlan = typedMinutes - planValue;
   const percentTariff = 10;
-
-  if (minutesLeftUsingPlan > 0) {
-    let tariffValue = (percentTariff / 100) * minutesLeftUsingPlan;
-
-    let valueUsingPlan = (minutesLeftUsingPlan + tariffValue) * moneyPerMinute;
-    return valueUsingPlan;
-  } else {
-    return 0;
-  }
+  if (minutesLeftUsingPlan < 1) return 0
+  const tariffValue = (percentTariff / 100) * minutesLeftUsingPlan;
+  return (minutesLeftUsingPlan + tariffValue) * moneyPerMinute;
 }
 
 export { calculateWithoutPlan, calculateWithPlan };

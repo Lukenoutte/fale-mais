@@ -11,10 +11,8 @@ function PlanBlock(props) {
   }
 
   function classPlanBlock() {
-
-    if (planProp === plan.value) return "selected-plan";
-
-    return "";
+    if (planProp !== plan.value) return "";
+    return "selected-plan";
   }
 
   return (

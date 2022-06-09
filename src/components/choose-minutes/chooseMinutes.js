@@ -6,10 +6,9 @@ function ChooseMinutes() {
   const { minutes } = useContext(SimulationContext);
 
   function validateMinutes(e) {
-    let inputValue = e.target.value;
-    if (inputValue >= 0 && inputValue <= 99999) {
-      minutes.set(inputValue);
-    }
+    const inputValue = e.target.value;
+    if (inputValue <= 0 || inputValue >= 99999) return
+    minutes.set(inputValue);
   }
 
   return (
